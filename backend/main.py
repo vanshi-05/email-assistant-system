@@ -30,6 +30,8 @@ app.add_middleware(
 )
 
 FRONTEND_URL = os.getenv("FRONTEND_URL", "https://email-assistant-frontend-o0yq.onrender.com")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://email-assistant-backend-jf77.onrender.com"
+)
 
 # Pydantic schemas for requests
 class UserAuth(BaseModel):
@@ -109,7 +111,7 @@ def get_google_auth_url(token: str, db: Session = Depends(get_db)):
         )
 
     # Use the local backend endpoint as redirect callback
-    redirect_uri = "http://localhost:8000/auth/google/callback"
+    redirect_uri = f"{BACKEND_URL}/auth/google/callback"
     flow = get_google_flow(redirect_uri)
     
     # Embed the user email in the OAuth state parameter to identify them in callback
@@ -128,7 +130,7 @@ def google_oauth_callback(code: str, state: str, db: Session = Depends(get_db)):
     if not user:
         raise HTTPException(status_code=404, detail="User not found for OAuth flow.")
 
-    redirect_uri = "http://localhost:8000/auth/google/callback"
+    redirect_uri = f"{BACKEND_URL}/auth/google/callback"
     flow = get_google_flow(redirect_uri)
     
     try:
