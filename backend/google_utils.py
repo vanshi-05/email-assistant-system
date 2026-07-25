@@ -46,7 +46,8 @@ def get_google_flow(redirect_uri: str):
     return Flow.from_client_secrets_file(
         secrets_file,
         scopes=SCOPES,
-        redirect_uri=redirect_uri
+        redirect_uri=redirect_uri,
+        autogenerate_code_verifier=False
     )
 
 def get_google_credentials(user_id: int, db: Session) -> Credentials:

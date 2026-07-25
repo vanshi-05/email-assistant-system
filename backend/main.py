@@ -134,7 +134,10 @@ def google_oauth_callback(code: str, state: str, db: Session = Depends(get_db)):
     flow = get_google_flow(redirect_uri)
     
     try:
-        flow.fetch_token(code=code)
+        flow.fetch_token(
+            code=code,
+            client_secret=flow.client_config["client_secret"]
+        )
         credentials = flow.credentials
         
         # Save token to DB
