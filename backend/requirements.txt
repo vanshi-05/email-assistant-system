@@ -11,3 +11,4 @@ python-dotenv
 passlib[bcrypt]
 python-jose[cryptography]
 psycopg2-binary==2.9.10
+email-validator
