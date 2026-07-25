@@ -18,7 +18,7 @@ init_db()
 origins = [
     "http://localhost:5173",  # React / Vite
     "http://localhost:3000",  # Next.js / React
-    "https://yourfrontend.vercel.app",  # Production frontend placeholder
+    "https://email-assistant-frontend-o0yq.onrender.com",  # Production frontend placeholder
 ]
 
 app.add_middleware(
@@ -29,7 +29,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "https://email-assistant-frontend-o0yq.onrender.com")
 
 # Pydantic schemas for requests
 class UserAuth(BaseModel):
