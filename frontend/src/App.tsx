@@ -340,8 +340,8 @@ export default function App() {
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="font-bold text-white tracking-tight leading-tight">AI Assistant</h1>
-                <span className="text-[10px] text-primary-400 font-semibold tracking-wider uppercase">Full-Stack Cloud</span>
+                <h1 className="font-bold text-white tracking-tight leading-tight">Email Assistant</h1>
+                <span className="text-[10px] text-primary-400 font-semibold tracking-wider uppercase">Using Agentic AI</span>
               </div>
             </div>
 
@@ -875,11 +875,6 @@ export default function App() {
 
         </div>
       )}
-
-      {/* FOOTER */}
-      <footer className="py-4 text-center text-xs text-gray-500 bg-[#060a12] border-t border-gray-800/40">
-        <span>© {new Date().getFullYear()} AI Email Assistant. Developed for Full-Stack Engineering Portfolios.</span>
-      </footer>
 
     </div>
   );
