@@ -1,0 +1,6 @@
+backend/credentials.json
+backend/email_system.db
+.env
+.env.*
+__pycache__/
+*.pyc
